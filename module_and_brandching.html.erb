@@ -1,0 +1,39 @@
+def multiply(first_number,second_number) # this is a funcition 
+	first_number.to_f * second_number.to_f
+end
+def sub(first_number,second_number) # this is a funcition 
+	first_number.to_f + second_number.to_f
+end
+def slash(first_number,second_number) # this is a funcition 
+	first_number.to_f / second_number.to_f
+end
+def mod(first_number,second_number) # this is a funcition 
+	first_number.to_f % second_number.to_f
+end
+puts " pls input your first number"
+first_number1=gets.chomp
+puts " pls input your second number"
+second_number2=gets.chomp
+puts " what do you want to do?"
+puts " 1) multi 2) sub 3) slash 4) mod"
+input=gets.chomp;
+if input=='1'
+	puts " you have choosen multi"
+	result=multiply(first_number1,second_number2)
+	
+elsif input=='2'
+	puts " you have choosen sub"
+	result=sub(first_number1,second_number2)
+	
+elsif input=='3'
+	puts " you have choosen slash"
+	result=slash(first_number1,second_number2)
+	
+elsif input=='4'
+	puts " you have choosen mod"
+	result=mod(first_number1,second_number2)
+
+else 
+		puts " you have made an invalid choice"					
+end
+puts " kq= #{result}"

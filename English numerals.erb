@@ -1,0 +1,282 @@
+puts "hello, pls input your number"
+input = gets.chomp
+input=input.to_i.to_s
+dodai=input.length
+puts "ban da nhap vao: #{input}"
+#doc 1 ky tu
+def read1(n)
+	case n # a_variable is the variable we want to compare
+  when 1    
+  	print "one-" 
+	when 2    
+  	print "two-"
+  	when 3    
+  	print "thee-" 
+  	when 4    
+  	print "four-" 
+  	when 5    
+  	print "five-"
+  	when 6    
+  	print "six-" 
+  	when 7   
+  	print "seven-" 
+  	when 8    
+  	print "eight-"
+  	when 9    
+  	print "nine-"  
+	end
+end
+# doc 10-11------19
+def readspecial(n)
+	case n # a_variable is the variable we want to compare
+	when 10    
+  	print "ten " 
+	when 11    
+  	print "eleven " 
+	when 12    
+  	print "twelve "
+  	when 13    
+  	print "thirteen " 
+  	when 14    
+  	print "fourteen " 
+  	when 15    
+  	print "fifteen "
+  	when 16    
+  	print "sixteen " 
+  	when 17   
+  	print "seventeen " 
+  	when 18    
+  	print "eightteen "
+  	when 19    
+  	print "nineteen " 
+	end
+end
+#doc tu 20 tro len den 99
+def read2s(n)
+	case n # a_variable is the variable we want to compare 
+	when 2    
+  	print "twenty-"
+  	when 3    
+  	print "thirty-" 
+  	when 4    
+  	print "forty- " 
+  	when 5    
+  	print "fifty-"
+  	when 6    
+  	print "sixty-" 
+  	when 7   
+  	print "seventy-" 
+  	when 8    
+  	print "eighty-"
+  	when 9    
+  	print "ninety-"  
+	end
+end
+
+def len1(object)
+  if object==0
+    puts "zero"
+	else  read1(object)
+  end  
+end
+
+def len2(object)
+	if (object >=10 && object <20)
+		readspecial(object)
+	else
+		chuc =(object/10).to_i
+		donvi =(object%10)
+    if chuc!=0&& donvi==0
+        read2s(chuc)
+    else
+        read2s(chuc)
+        len1(donvi)     
+    end
+		
+	end
+	
+end
+
+def len3(object)
+	backup = object
+	tram = (object/100).to_i
+  chuc_nguyen = (object%100)
+	chuc = (((object%100).to_i)/10).to_i
+	donvi= object%10
+  
+  if tram==0 && chuc==0 && donvi==0
+      print  "zero "
+  elsif (tram!=0 && chuc==0 && donvi==0)
+      read1(tram)
+      print  "hundred "
+  else(tram!=0&&chuc!=0&& donvi==0)
+      read1(tram)
+      print  "hundred "
+      len2(chuc_nguyen)
+  end           
+end
+
+def len4(object,input_length)
+    index_mod = input_length%3
+    test1=object.slice!(index_mod..(input_length-1))
+
+    if (test1.to_i)==0 && (object.to_i)==0
+        print "zero "
+    elsif (test1.to_i)==0 && (object.to_i)!=0
+        read1(object.to_i)
+        print "thousand "
+    else    
+        read1(object.to_i)
+        print "thousand "
+        len3(test1.to_i) 
+    end
+end
+
+def len5(object,input_length)
+    index_mod = input_length%3
+    test1=object.slice!(index_mod..(input_length-1))
+    if (test1.to_i)==0 && (object.to_i)==0
+        print "zero "
+    elsif (test1.to_i)==0 && (object.to_i)!=0
+        len2(object.to_i)
+        print "thousand "
+    else    
+         len2(object.to_i)
+         print "thousand "
+         len3(test1.to_i)
+    end
+    
+end
+
+def len6(object,input_length)
+    index_mod = input_length-3
+    test1=object.slice!(index_mod..(input_length-1))
+    if (test1.to_i)==0 && (object.to_i)==0
+        print "zero "
+    elsif (test1.to_i)==0 && (object.to_i)!=0
+        len3(object.to_i)
+        print "thousand "
+    else    
+         len3(object.to_i)
+         print "thousand "
+         len3(test1.to_i)
+    end
+end
+
+def len7(object,input_length)
+    index_mod = input_length%6
+    test1=object.slice!(index_mod..(input_length-1))
+    if (test1.to_i)==0 && (object.to_i)==0
+        print "zero "
+    elsif (test1.to_i)==0 && (object.to_i)!=0
+        len1(object.to_i)
+        print "milion "
+    else    
+         len1(object.to_i)
+         print "milion "
+         len6(test1,6)
+    end
+end
+
+def len8(object,input_length)
+    index_mod = input_length-6
+    test1=object.slice!(index_mod..(input_length-1))
+    if (test1.to_i)==0 && (object.to_i)==0
+        print "zero "
+    elsif (test1.to_i)==0 && (object.to_i)!=0
+        len2(object.to_i)
+        print "milion "
+    else    
+         len2(object.to_i)
+         print "milion "
+         len6(test1,6)
+    end
+end
+
+def len9(object,input_length)
+    index_mod = input_length-6
+    test1=object.slice!(index_mod..(input_length-1))
+    if (test1.to_i)==0 && (object.to_i)==0
+        print "zero "
+    elsif (test1.to_i)==0 && (object.to_i)!=0
+        len3(object.to_i)
+        print "milion "
+    else    
+         len3(object.to_i)
+         print "milion "
+         len6(test1,6)
+    end
+end
+
+def len10(object,input_length)
+    index_mod = input_length%9
+    test1=object.slice!(index_mod..(input_length-1))
+    if (test1.to_i)==0 && (object.to_i)==0
+        print "zero "
+    elsif (test1.to_i)==0 && (object.to_i)!=0
+        len1(object.to_i)
+        print "bilion "
+    else    
+         len1(object.to_i)
+         print "milion "
+         len9(test1,9)
+    end
+end
+
+def len11(object,input_length)
+     index_mod = input_length-9
+    test1=object.slice!(index_mod..(input_length-1))
+    if (test1.to_i)==0 && (object.to_i)==0
+        print "zero "
+    elsif (test1.to_i)==0 && (object.to_i)!=0
+        len2(object.to_i)
+        print "bilion "
+    else    
+         len2(object.to_i)
+         print "bilion "
+         len9(test1,9)
+    end
+end
+def len12(object,input_length)
+    index_mod = input_length-9
+    test1=object.slice!(index_mod..(input_length-1))
+    puts "#{test1}"
+    puts "#{object}"
+    if (test1.to_i)==0 && (object.to_i)==0
+        print "zero "
+    elsif (test1.to_i)==0 && (object.to_i)!=0
+        len3(object.to_i)
+        print "bilion "
+    else    
+         len3(object.to_i)
+         print "bilion "
+         len9(test1,9)
+    end
+end
+
+if dodai == 1
+	len1(input.to_i)
+elsif dodai == 2
+	len2(input.to_i)
+elsif dodai == 3
+	len3(input.to_i) 
+elsif dodai==4
+    len4(input,dodai)
+elsif dodai==5
+    len5(input,dodai)
+elsif dodai==6
+    len6(input,dodai)
+elsif dodai==7
+    len7(input,dodai)
+elsif dodai==8
+    len8(input,dodai)
+elsif dodai==9
+    len9(input,dodai)
+elsif dodai==10
+    len10(input,dodai)
+elsif dodai==11
+    len11(input,dodai)
+elsif dodai==12
+    len12(input,dodai)                                                
+end
+    

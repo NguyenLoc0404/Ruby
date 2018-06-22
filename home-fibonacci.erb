@@ -1,0 +1,47 @@
+puts "hello pls input your number"
+number1= gets.chomp;
+i= 0;
+#===================================================
+#cach 1 : de quy
+def multiply(n) 
+	
+	if n ==0
+		return 0;
+	elsif n ==1
+		return 1;
+	else return multiply(n-1)+multiply(n-2)
+
+	end			
+	end
+for i in i..number1.to_i
+	if i==0
+		puts("==============================")
+	end		
+	kq= multiply(i)
+	puts"#{kq}"
+end
+
+#===================================================
+#cach 2: xuat thang ra
+=begin
+kq= 0;
+fibo1= 0;
+fibo2= 1;
+
+for i in i..number1.to_i
+	if i ==0	
+	puts("==============================")	
+	puts("#{kq}")
+	elsif i ==1 
+		kq=1;
+		puts("#{kq}")
+	else 
+		kq= fibo1+ fibo2;
+		fibo1= fibo2;
+		fibo2= kq;
+		puts("#{kq}")
+	end
+	end
+
+=end
+#===================================================

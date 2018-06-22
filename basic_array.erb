@@ -1,0 +1,32 @@
+num=[1,2,3]
+letters = ['a', 'b', 'c']
+#cach1
+cach1 = Array.new
+	i=0
+	j=0
+	k=0
+for i in i..num.length-1
+	for j in j..letters.length-1
+		cach1[k]=[num[i],letters[j]]
+		k+=1
+	end	
+	j=0
+end
+puts"#{cach1}"
+puts"=========================================="
+#cach2
+cach2= num.product(letters)
+puts"#{cach2}"
+puts"=========================================="
+#cach3
+num_row1 = Array.new(3,num[0])
+num_row2 = Array.new(3,num[1])
+num_row3 = Array.new(3,num[2])
+cach3_row1 = num_row1.zip(letters)
+cach3_row2 = num_row2.zip(letters)
+cach3_row3 = num_row3.zip(letters)
+cach3 = cach3_row1.concat(cach3_row2).concat(cach3_row3)
+puts "#{cach3}"
+
+
+
